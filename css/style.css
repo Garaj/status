@@ -1,0 +1,51 @@
+/* Coded by Atakan Goktepe 
+ * If you see a mistake please report me: atakangktepe@gmail.com <3
+ * I love you :)
+*/
+/* RESET */
+*{
+	margin: 0;
+	padding: 0;
+}
+/* ANOTHER :P */
+body{
+	background: url('../img/hero-01.jpg');
+	background-size: cover;
+}
+.blur{
+	background: url('../img/grid.png');
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.we-are-family{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	position: relative;
+	z-index: 99;
+	padding-top: 15%;
+	font-family: 'Nunito', sans-serif;
+}
+.we-are-family h1{
+	font-size: 36px;
+	font-weight: 700;
+	color: #fff;
+}
+h2.yes{
+	font-size: 36px;
+	font-weight: 700;
+	color: #fff;
+	background: #60be36;
+	margin-top: 10px;
+}
+h2.no{
+	font-size: 36px;
+	font-weight: 700;
+	color: #fff;
+	background: #be3636;
+	margin-top: 10px;
+}
