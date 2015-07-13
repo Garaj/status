@@ -7,6 +7,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+	<script src="js/ngtimeago.js"></script>
 	<script src="app.js"></script>
 </head>
 <body ng-controller="garajCtrl">
@@ -21,6 +22,10 @@
 	</div>
 	<div ng-if="liste.state.open == false">
 		<h2 class="no"> <i class="fa fa-times"></i> Kapalı :(</h2>
+	</div>
+	<div>
+		<br />
+		<h1>Son değişiklik: {{lastChangeDate | timeago}}</h1>
 	</div>
 </div>
 <div class="blur"></div>
