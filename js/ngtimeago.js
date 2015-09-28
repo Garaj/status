@@ -2,7 +2,6 @@
 
 var catalyst = angular.module('ngtimeago', []);
 
-
 catalyst.filter('timeago', function() {
         return function(input, p_allowFuture) {
 		
@@ -40,8 +39,6 @@ catalyst.filter('timeago', function() {
                 days = hours / 24,
                 years = days / 365,
                 separator = strings.wordSeparator === undefined ?  " " : strings.wordSeparator,
-            
-               
                 prefix = strings.prefixAgo,
                 suffix = strings.suffixAgo;
                 
@@ -63,13 +60,10 @@ catalyst.filter('timeago', function() {
             days < 365 && substitute(strings.months, Math.round(days / 30), strings) ||
             years < 1.5 && substitute(strings.year, 1, strings) ||
             substitute(strings.years, Math.round(years), strings);
-			console.log(prefix+words+suffix+separator);
-			prefix.replace(/ /g, '')
-			words.replace(/ /g, '')
-			suffix.replace(/ /g, '')
+			prefix.replace(/ /g, '');
+			words.replace(/ /g, '');
+			suffix.replace(/ /g, '');
 			return (prefix+' '+words+' '+suffix+' '+separator);
             
         };
     });
-
-    

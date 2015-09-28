@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="GarajApp">
+<html lang="en">
 <head>
 
 	<!-- Meta Tags -->
@@ -13,11 +13,10 @@
 
 	<!-- Font -->
 	<link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 
 </head>
-<body ng-controller="garajCtrl">
+<body ng-controller="garajCtrl" ng-app="GarajApp" ng-cloak>
 
 	<div class="we-are-family">
 
@@ -25,34 +24,34 @@
 
 		<h1><i class="fa fa-bolt"></i> Garaj Açık Mı? <i class="fa fa-bolt"></i></h1>
 
-		<div ng-if="liste.state.open == true">
+		<div ng-if="garaj.state.open">
 			<h2 class="yes">
 			<i class="fa fa-check"></i> Açık!
-			<div ng-if="liste.state.headcount > 0">
-				Bağlı cihaz sayısı: {{liste.state.headcount}} <i class="fa fa-user"></i>
+			<div ng-if="garaj.state.headcount > 0">
+				Bağlı cihaz sayısı: {{garaj.state.headcount}} <i class="fa fa-user"></i>
 			</div>
 			</h2>
 		</div>
 
-		<div ng-if="liste.state.open == false">
+		<div ng-if="!garaj.state.open && garaj">
 			<h2 class="no">
 			<i class="fa fa-times"></i> Kapalı :(
-			<div ng-if="liste.state.headcount > 0">
-				Bağlı cihaz sayısı: {{liste.state.headcount}} <i class="fa fa-user"></i>
+			<div ng-if="garaj.state.headcount > 0">
+				Bağlı cihaz sayısı: {{garaj.state.headcount}} <i class="fa fa-user"></i>
 			</div>
 			</h2>
 		</div>
 
-		<div>
+		<div ng-if="garaj && lastChangeDate">
 			<br />
-			<h1 ng-show="lastChangeDate">Son değişiklik: {{lastChangeDate | timeago}}</h1>
+			<h1>Son değişiklik: {{lastChangeDate | timeago}}</h1>
 		</div>
 
 	</div>
 
 	<div class="blur"></div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+	<script src="js/angular.min.js"></script>
 	<script src="js/ngtimeago.js"></script>
 	<script src="app.js"></script>
 </body>
